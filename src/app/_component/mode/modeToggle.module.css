@@ -1,0 +1,17 @@
+.mode {
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.light-mode {
+  background-color: var(--white-color);
+  color: var(--dark-color);
+}
+
+.lightMode {
+  background: var(--white_A-color);
+}
+
+.lightMode .burger div {
+  background-color: var(--dark-color);
+}
