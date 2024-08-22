@@ -1,6 +1,7 @@
 .mode {
   cursor: pointer;
   font-size: 1.5rem;
+  color: var(--white-color);
 }
 
 .light-mode {

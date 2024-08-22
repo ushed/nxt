@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { FaMoon, FaSun } from "react-icons/fa";
+import { IconParkTwotoneMoon } from "@/app/_component/mode/moon";
+import { IconParkTwotoneSun } from "@/app/_component/mode/sun";
 import styles from "./modeToggle.module.css";
 
 export default function ModeToggle() {
@@ -36,7 +37,7 @@ export default function ModeToggle() {
 
   return (
     <i className={styles.mode} onClick={toggleMode}>
-      {isLightMode ? <FaSun /> : <FaMoon />}
+      {isLightMode ? <IconParkTwotoneSun /> : <IconParkTwotoneMoon />}
     </i>
   );
 }

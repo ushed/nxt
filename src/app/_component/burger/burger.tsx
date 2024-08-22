@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import Link from "next/link";
-import { FaXTwitter } from "react-icons/fa6";
+import { IconParkTwotoneBigX } from "@/app/_component/burger/X";
 import ModeToggle from "../mode/modeToggle";
 import styles from "./burger.module.css";
 
@@ -41,7 +41,7 @@ export default function Burger() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaXTwitter />
+            <IconParkTwotoneBigX />
           </Link>
         </li>
         <li>
