@@ -1,0 +1,10 @@
+/* src/app/_component/footer.module.css */
+.footer {
+  text-align: center;
+  padding: 10px 0;
+  background-color: var(--Accent-color);
+  color: var(--white-color);
+}
+.footer p {
+  font-size: 0.8rem;
+}

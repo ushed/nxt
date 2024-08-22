@@ -1,0 +1,43 @@
+/* src/app/_component/header/header.module.css */
+.header {
+  background: var(--dark_A-color);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: 0.5s;
+}
+
+.header h1 {
+  margin-left: 70px;
+}
+
+.header h1 a span {
+  color: var(--Accent-color);
+  font-weight: 600;
+  font-size: 2rem;
+  transition: 0.5s;
+}
+
+.header a:hover {
+  color: var(--Accent-color);
+}
+
+.header a:hover span {
+  color: #fff;
+  text-shadow: -1px 1px 5px var(--Accent-color),
+    1px -1px 5px var(--Accent-color);
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    height: 60px;
+  }
+  .header h1 {
+    margin-left: 30px;
+  }
+}
