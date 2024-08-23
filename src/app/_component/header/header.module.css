@@ -50,13 +50,6 @@
   .light-mode .header {
     background: var(--white_A-color);
   }
-  .light-mode .burger div {
-    background-color: var(--dark-color);
-  }
-
-  .light-mode .nav_mode {
-    background: var(--white_A-color) !important;
-  }
 
   @media screen and (max-width: 768px) {
     .header {

@@ -26,6 +26,7 @@ body {
 
 .light-mode #header {
   background: var(--white_A-color);
+  color: var(--white-color);
 }
 
 .light-mode #blog dt,
