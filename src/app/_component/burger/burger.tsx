@@ -1,3 +1,4 @@
+// src/app/_component/burger/burger.tsx
 "use client";
 
 import { useEffect } from "react";
@@ -29,24 +30,26 @@ export default function Burger() {
   return (
     <nav>
       <ul className={styles.nav_links}>
-        <li>
-          <Link href="/creation">Creations</Link>
-        </li>
-        <li>
-          <Link href="/blog">Blog</Link>
-        </li>
-        <li className={styles.btn}>
-          <Link
-            href="https://www.twitter.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <IconParkTwotoneBigX />
-          </Link>
-        </li>
-        <li>
-          <ModeToggle />
-        </li>
+        <div className={styles.nav_mode}>
+          <li>
+            <Link href="/creation">Creations</Link>
+          </li>
+          <li>
+            <Link href="/blog">Blog</Link>
+          </li>
+          <li className={styles.btn}>
+            <Link
+              href="https://www.twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <IconParkTwotoneBigX />
+            </Link>
+          </li>
+          <li>
+            <ModeToggle navClassName={styles.nav_mode} />
+          </li>
+        </div>
       </ul>
       <div className={styles.burger}>
         <div className={styles.line1}></div>

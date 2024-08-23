@@ -19,6 +19,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
+      <head>
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css"
+        />
+        <script src="/static/home.js" defer></script>
+        <title>悠々記</title>
+      </head>
       <body className={inter.className}>
         <Header />
         {children}
