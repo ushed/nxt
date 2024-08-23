@@ -26,11 +26,6 @@ body {
 
 .light-mode #header {
   background: var(--white_A-color);
-  color: var(--dark_A-color);
-}
-
-.light-mode #header .nav_mode {
-  background: var(--white_A-color) !important;
 }
 
 .light-mode #blog dt,
@@ -58,7 +53,10 @@ p {
   font-size: 1.2rem;
   line-height: 1.5;
 }
-
+h1 {
+  margin-left: 50px;
+  font-size: 2rem !important;
+}
 h3 {
   font-size: 1rem;
 }
