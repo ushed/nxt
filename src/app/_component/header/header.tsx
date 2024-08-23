@@ -1,4 +1,4 @@
-//src/app/components/header/header.tsx
+//src/app/_components/header/header.tsx
 import Link from "next/link";
 import styles from "./header.module.css";
 import Burger from "../burger/burger";

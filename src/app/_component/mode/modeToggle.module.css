@@ -1,3 +1,4 @@
+/* src/spp/_component/mode/modeToggle.module.css */
 .mode {
   cursor: pointer;
   font-size: 1.5rem;
@@ -9,10 +10,6 @@
   color: var(--dark-color);
 }
 
-.lightMode {
-  background: var(--white_A-color);
-}
-
-.lightMode .burger div {
-  background-color: var(--dark-color);
+.light-mode .nav_mode {
+  background: var(--white_A-color) !important;
 }

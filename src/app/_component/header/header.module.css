@@ -7,7 +7,66 @@
   align-items: center;
   height: 80px;
   position: fixed;
-  top: 0;
+  top: 0; /* src/app/_component/header/header.module.css */
+  .header {
+    background: var(--dark_A-color);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+  }
+
+  .header h1 {
+    margin-left: 50px;
+    font-size: 2rem;
+  }
+
+  .header a {
+    color: var(--white-color) !important; /* 文字色を白に指定 */
+  }
+
+  .header h1 a span {
+    color: var(--Accent-color);
+    font-weight: 600;
+    font-size: 2.5rem;
+    transition: 0.5s;
+  }
+
+  .header a:hover {
+    color: var(--Accent-color) !important;
+  }
+
+  .header a:hover span {
+    color: #fff;
+    text-shadow: -2px 2px 10px var(--Accent-color),
+      2px -2px 10px var(--Accent-color);
+  }
+
+  .light-mode .header {
+    background: var(--white_A-color);
+  }
+  .light-mode .burger div {
+    background-color: var(--dark-color);
+  }
+
+  .light-mode .nav_mode {
+    background: var(--white_A-color) !important;
+  }
+
+  @media screen and (max-width: 768px) {
+    .header {
+      height: 60px;
+    }
+    .header h1 {
+      margin-left: 30px;
+    }
+  }
+
   left: 0;
   transition: 0.5s;
 }
