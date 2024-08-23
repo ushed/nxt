@@ -23,7 +23,7 @@
 
   .header h1 {
     margin-left: 50px;
-    font-size: 2rem;
+    font-size: 2rem !important;
   }
 
   .header a {
