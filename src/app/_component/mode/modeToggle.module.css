@@ -5,6 +5,10 @@
   color: var(--white-color);
 }
 
+.mode:hover {
+  color: var(--Accent-color);
+}
+
 .light-mode .nav_mode {
   background: var(--white_A-color) !important;
 }
