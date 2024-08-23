@@ -46,9 +46,7 @@ export default function Burger() {
               <IconParkTwotoneBigX />
             </Link>
           </li>
-          <li>
-            <ModeToggle navClassName={styles.nav_mode} />
-          </li>
+          <ModeToggle navClassName={styles.nav_mode} />
         </div>
       </ul>
       <div className={styles.burger}>
