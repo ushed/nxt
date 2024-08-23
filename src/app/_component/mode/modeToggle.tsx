@@ -46,8 +46,10 @@ export default function ModeToggle({ navClassName }: ModeToggleProps) {
   };
 
   return (
-    <i className={styles.mode} onClick={toggleMode}>
-      {isLightMode ? <IconParkTwotoneSun /> : <IconParkTwotoneMoon />}
-    </i>
+    <li>
+      <i className={styles.mode} onClick={toggleMode}>
+        {isLightMode ? <IconParkTwotoneSun /> : <IconParkTwotoneMoon />}
+      </i>
+    </li>
   );
 }
