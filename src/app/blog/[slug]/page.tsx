@@ -1,59 +1,53 @@
-//src/app/blog/[slug]/page.tsx
-import { Metadata } from "next";
-import { notFound } from "next/navigation";
-import { getPostBySlug, markdownToHtml, getAllPosts } from "@/lib/post";
-
-type Params = {
-  params: {
-    slug: string;
-  };
-};
-
-export default async function Post({ params }: Params) {
-  const post = getPostBySlug(params.slug);
-
-  if (!post) {
-    return notFound();
-  }
-
-  const content = await markdownToHtml(post.content || "");
-
-  return (
-    <main>
-      <article className="mb-32">
-        <header>
-          <h1>{post.frontmatter.title}</h1>
-          <p>{post.frontmatter.date}</p>
-          <p>By {post.frontmatter.author.name}</p>
-        </header>
-        <div dangerouslySetInnerHTML={{ __html: content }} />
-      </article>
-    </main>
-  );
-}
-
-export function generateMetadata({ params }: Params): Metadata {
-  const post = getPostBySlug(params.slug);
-
-  if (!post) {
-    return notFound();
-  }
-
-  const title = `${post.frontmatter.title} | Next.js Blog Example`;
-
-  return {
-    title,
-    openGraph: {
-      title,
-      images: [post.frontmatter.ogImage.url],
-    },
-  };
-}
-
+import fs from "fs";
+import path from "path";
+import { serialize } from "next-mdx-remote/serialize";
+import dynamic from "next/dynamic";
 export async function generateStaticParams() {
-  const posts = getAllPosts();
+  const slugs = ["1"];
 
-  return posts.map((post) => ({
-    slug: post.slug,
+  return slugs.map((slug) => ({
+    slug,
   }));
 }
+
+const BlogContent = dynamic(() => import("./BlogContent"), { ssr: false });
+
+type BlogType = {
+  title: string;
+  date: string;
+  text: any;
+};
+
+const fetchBlogData = async (slug: string): Promise<BlogType> => {
+  try {
+    const mdxFilePath = path.join(process.cwd(), `_posts/${slug}.mdx`);
+    const mdxSource = fs.readFileSync(mdxFilePath, "utf-8");
+
+    const serializedContent = await serialize(mdxSource, {
+      parseFrontmatter: true,
+    });
+
+    const frontmatter = serializedContent.frontmatter || {};
+
+    return {
+      title: (frontmatter.title as string) || "",
+      date: (frontmatter.date as string) || "",
+      text: serializedContent,
+    };
+  } catch (error) {
+    console.error("Error fetching blog data:", error);
+    throw new Error("Failed to fetch blog data");
+  }
+};
+
+const BlogPage = async ({ params }: { params: { slug: string } }) => {
+  const blog = await fetchBlogData(params.slug);
+
+  return (
+    <main id="main">
+      <BlogContent slug={params.slug} blog={blog} />
+    </main>
+  );
+};
+
+export default BlogPage;
