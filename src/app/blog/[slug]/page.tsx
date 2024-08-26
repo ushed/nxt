@@ -2,6 +2,13 @@ import fs from "fs";
 import path from "path";
 import { serialize } from "next-mdx-remote/serialize";
 import dynamic from "next/dynamic";
+export async function generateStaticParams() {
+  const slugs = ["1"];
+
+  return slugs.map((slug) => ({
+    slug,
+  }));
+}
 
 const BlogContent = dynamic(() => import("./BlogContent"), { ssr: false });
 
