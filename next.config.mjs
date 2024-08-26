@@ -1,5 +1,4 @@
 import mdx from "@next/mdx";
-const { createMDX } = mdx;
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -7,6 +6,8 @@ const nextConfig = {
   output: "export",
 };
 
-const withMDX = createMDX({});
+const withMDX = mdx({
+  extension: /\.mdx?$/,
+});
 
 export default withMDX(nextConfig);
