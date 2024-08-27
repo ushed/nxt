@@ -26,7 +26,7 @@ const CreationContent: FC<CreationContentProps> = ({ slug, creation }) => {
   return (
     <section id="creation" className="wrapper">
       <h3>{creation.date}</h3>
-      <h2>{creation.title}</h2>
+      <h2 style={{ marginBottom: "40px" }}>{creation.title}</h2>
       <img
         src={creation.thumbnail}
         alt={creation.title}
