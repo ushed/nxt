@@ -5,7 +5,10 @@ import { serialize } from "next-mdx-remote/serialize";
 import dynamic from "next/dynamic";
 
 export async function generateStaticParams() {
-  const slugs = ["1", "2"];
+  const creationDirectory = path.join(process.cwd(), "_creation.posts");
+  const filenames = fs.readdirSync(creationDirectory);
+
+  const slugs = filenames.map((filename) => path.parse(filename).name);
 
   return slugs.map((slug) => ({
     slug,
