@@ -4,8 +4,8 @@ import { serialize } from "next-mdx-remote/serialize";
 import CreationContent from "./CreationContent";
 
 export async function generateStaticParams() {
-  // 適切なslugを取得する処理を追加することをお勧めします。
-  const slugs = ["1", "2"]; // ここはデータベースやファイルシステムから動的に取得することをお勧めします。
+  // `_creation.posts` フォルダ内のファイル名を動的に取得することをお勧めします
+  const slugs = ["1", "2"]; // 例: 動的に取得するコードに変更
 
   return slugs.map((slug) => ({
     slug,
@@ -52,6 +52,7 @@ const CreationDetailPage = async ({ params }: { params: { slug: string } }) => {
       </main>
     );
   } catch (error) {
+    console.error("Error rendering CreationDetailPage:", error);
     return (
       <main id="main">
         <p>Failed to load creation data. Please try again later.</p>
