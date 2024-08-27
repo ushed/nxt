@@ -2,6 +2,12 @@
 import { FC } from "react";
 import Link from "next/link";
 import { getBlogData, BlogPost } from "./data";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "悠々記 - ブログ一覧",
+  description: "36のブログを一覧で表示します。",
+};
 
 const BlogPage: FC = async () => {
   const blogPosts: BlogPost[] = await getBlogData();

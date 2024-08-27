@@ -1,7 +1,22 @@
+// src/app/blog/[slug]/page.tsx
 import fs from "fs";
 import path from "path";
 import { serialize } from "next-mdx-remote/serialize";
 import dynamic from "next/dynamic";
+import type { Metadata } from "next";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const blog = await fetchBlogData(params.slug);
+
+  return {
+    title: `${blog.title} - 悠々記`,
+    description: `ブログ記事 : ${blog.title}`,
+  };
+}
 
 export async function generateStaticParams() {
   const blogDirectory = path.join(process.cwd(), "_blog.posts");
