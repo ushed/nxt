@@ -7,7 +7,7 @@ export default async function Home() {
     <main id="main">
       <picture>
         <Image
-          src="/public/favicon/kuma.jpg"
+          src="/favicon/kuma.jpg"
           alt="kumamoto"
           width={500}
           height={500}
@@ -52,7 +52,7 @@ export default async function Home() {
           <li>
             <a href="/creationDetail/1">
               <Image
-                src="/public/favicon/kuma.jpg"
+                src="/favicon/kuma.jpg"
                 alt="kumamoto1"
                 width={300}
                 height={300}
@@ -68,7 +68,7 @@ export default async function Home() {
           <li>
             <a href="/creationDetail/1">
               <Image
-                src="/public/favicon/kuma.jpg"
+                src="/favicon/kuma.jpg"
                 alt="kumamoto2"
                 width={300}
                 height={300}
