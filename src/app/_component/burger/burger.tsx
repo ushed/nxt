@@ -39,7 +39,7 @@ export default function Burger() {
           </li>
           <li className={styles.btn}>
             <Link
-              href="https://www.twitter.com"
+              href="https://x.com/Ushed_36"
               target="_blank"
               rel="noopener noreferrer"
             >
