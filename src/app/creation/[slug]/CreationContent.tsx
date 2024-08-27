@@ -3,7 +3,6 @@
 
 import { FC } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import dynamic from "next/dynamic";
 
 const MDXRemote = dynamic(
@@ -28,12 +27,7 @@ const CreationContent: FC<CreationContentProps> = ({ slug, creation }) => {
     <section id="creation" className="wrapper">
       <h2>{creation.title}</h2>
       <h3>{creation.date}</h3>
-      <Image
-        src={creation.thumbnail}
-        alt={creation.title}
-        width={500}
-        height={500}
-      />
+      <img src={creation.thumbnail} alt={creation.title} />
       <MDXRemote {...creation.text} />
       <Link href="/creation" className="btn_a">
         <div className="btn" style={{ marginTop: "100px" }}>
