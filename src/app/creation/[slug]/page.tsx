@@ -2,18 +2,19 @@
 import fs from "fs";
 import path from "path";
 import { serialize } from "next-mdx-remote/serialize";
-import CreationContent from "./CreationContent";
+import dynamic from "next/dynamic";
 
 export async function generateStaticParams() {
-  const postsDirectory = path.join(process.cwd(), "_creation.posts");
-  const filenames = fs.readdirSync(postsDirectory);
-
-  const slugs = filenames.map((filename) => filename.replace(/\.mdx$/, ""));
+  const slugs = ["1", "2"];
 
   return slugs.map((slug) => ({
     slug,
   }));
 }
+
+const CreationContent = dynamic(() => import("./CreationContent"), {
+  ssr: false,
+});
 
 type CreationType = {
   title: string;
@@ -23,31 +24,36 @@ type CreationType = {
 };
 
 const fetchCreationData = async (slug: string): Promise<CreationType> => {
-  const mdxFilePath = path.join(process.cwd(), `_creation.posts/${slug}.mdx`);
-  const mdxSource = fs.readFileSync(mdxFilePath, "utf-8");
+  try {
+    const mdxFilePath = path.join(process.cwd(), `_creation.posts/${slug}.mdx`);
+    const mdxSource = fs.readFileSync(mdxFilePath, "utf-8");
 
-  const serializedContent = await serialize(mdxSource, {
-    parseFrontmatter: true,
-  });
+    const serializedContent = await serialize(mdxSource, {
+      parseFrontmatter: true,
+    });
 
-  const frontmatter = serializedContent.frontmatter || {};
+    const frontmatter = serializedContent.frontmatter || {};
 
-  return {
-    title: (frontmatter.title as string) || "",
-    date: (frontmatter.date as string) || "",
-    text: serializedContent,
-    thumbnail: (frontmatter.thumbnail as string) || "",
-  };
+    return {
+      title: (frontmatter.title as string) || "",
+      date: (frontmatter.date as string) || "",
+      text: serializedContent,
+      thumbnail: (frontmatter.thumbnail as string) || "",
+    };
+  } catch (error) {
+    console.error("Error fetching blog data:", error);
+    throw new Error("Failed to fetch blog data");
+  }
 };
 
-const CreationDetailPage = async ({ params }: { params: { slug: string } }) => {
+const CreationPage = async ({ params }: { params: { slug: string } }) => {
   const creation = await fetchCreationData(params.slug);
 
   return (
     <main id="main">
-      <CreationContent creation={creation} />
+      <CreationContent slug={params.slug} creation={creation} />
     </main>
   );
 };
 
-export default CreationDetailPage;
+export default CreationPage;
