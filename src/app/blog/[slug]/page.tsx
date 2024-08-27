@@ -3,7 +3,7 @@ import path from "path";
 import { serialize } from "next-mdx-remote/serialize";
 import dynamic from "next/dynamic";
 export async function generateStaticParams() {
-  const slugs = ["1"];
+  const slugs = ["1", "2", "3", "4"];
 
   return slugs.map((slug) => ({
     slug,
