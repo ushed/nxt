@@ -1,7 +1,6 @@
 // src/app/creation/page.tsx
 import { FC } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { getAllCreations, CreationType } from "./data";
 
 const CreationPage: FC = async () => {
@@ -17,12 +16,7 @@ const CreationPage: FC = async () => {
           {creationPosts.map((post) => (
             <li key={post.id}>
               <Link href={`/creation/${post.id}`}>
-                <Image
-                  src={post.thumbnail}
-                  alt={post.title}
-                  width={500}
-                  height={500}
-                />
+                <img src={post.thumbnail} alt={post.title} />
                 <div>
                   <h3>{post.date}</h3>
                   <p>{post.title}</p>
