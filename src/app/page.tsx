@@ -19,7 +19,7 @@ export default async function Home() {
         </h2>
         <ul>
           <li>
-            <span>U</span>shed
+            <span>3</span>6(さぶろう)
           </li>
           <li>大学2年生</li>
           <li>エンジニアを目指してます</li>
@@ -70,11 +70,11 @@ export default async function Home() {
             </a>
           </li>
         </ul>
-        <a href="/creation" className="btn_a">
-          <div className="btn">
-            <div className="btn_txt">more creation</div>
+        <Link href="/creation" className="btn_a">
+          <div className="btn" style={{ marginTop: "100px" }}>
+            <div className="btn_txt">more Creation</div>
           </div>
-        </a>
+        </Link>
       </section>
 
       <section id="blog" className="wrapper">
@@ -89,11 +89,11 @@ export default async function Home() {
             </Link>
           ))}
         </dl>
-        <a href="/blog" className="btn_a">
-          <div className="btn">
-            <div className="btn_txt">more blog</div>
+        <Link href="/blog" className="btn_a">
+          <div className="btn" style={{ marginTop: "100px" }}>
+            <div className="btn_txt">more Blog</div>
           </div>
-        </a>
+        </Link>
       </section>
     </main>
   );
