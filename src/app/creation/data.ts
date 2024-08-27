@@ -1,7 +1,8 @@
-// src/app/creation/data.ts
 import fs from "fs";
 import path from "path";
 import { serialize } from "next-mdx-remote/serialize";
+
+const creationsDirectory = path.join(process.cwd(), "_creation.posts");
 
 export type CreationType = {
   id: string;
@@ -11,8 +12,8 @@ export type CreationType = {
   text: any;
 };
 
-export async function getCreationData(slug: string): Promise<CreationType> {
-  const mdxFilePath = path.join(process.cwd(), `_creation.posts/${slug}.mdx`);
+export const getCreationData = async (slug: string): Promise<CreationType> => {
+  const mdxFilePath = path.join(creationsDirectory, `${slug}.mdx`);
   const mdxSource = fs.readFileSync(mdxFilePath, "utf-8");
 
   const serializedContent = await serialize(mdxSource, {
@@ -28,15 +29,14 @@ export async function getCreationData(slug: string): Promise<CreationType> {
     thumbnail: (frontmatter.thumbnail as string) || "",
     text: serializedContent,
   };
-}
+};
 
-export async function getAllCreations(): Promise<CreationType[]> {
-  const creationsDir = path.join(process.cwd(), "_creation.posts");
-  const filenames = fs.readdirSync(creationsDir);
+export const getAllCreations = async (): Promise<CreationType[]> => {
+  const filenames = fs.readdirSync(creationsDirectory);
 
   // 数字が大きい順にソート
   const sortedFilenames = filenames
-    .map((filename) => filename.replace(/\.mdx$/, ""))
+    .map((filename) => path.parse(filename).name)
     .sort((a, b) => parseInt(b) - parseInt(a)); // 数字で比較
 
   const creations = await Promise.all(
@@ -44,4 +44,4 @@ export async function getAllCreations(): Promise<CreationType[]> {
   );
 
   return creations;
-}
+};
