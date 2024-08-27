@@ -25,7 +25,7 @@ const BlogContent: FC<BlogContentProps> = ({ slug, blog }) => {
   return (
     <section id="blog" className="wrapper">
       {/* <h1>{blog.title}</h1> */}
-      <p>{blog.date}</p>
+      <h3>{blog.date}</h3>
       <MDXRemote {...blog.text} />
       <Link href="/blog" className="btn_a">
         <div className="btn" style={{ marginTop: "100px" }}>
