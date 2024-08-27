@@ -11,7 +11,7 @@ export async function generateStaticParams() {
   const slugs = filenames.map((filename) => filename.replace(/\.mdx$/, ""));
 
   return slugs.map((slug) => ({
-    params: { slug },
+    slug,
   }));
 }
 
