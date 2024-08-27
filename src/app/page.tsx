@@ -6,12 +6,7 @@ export default async function Home() {
   return (
     <main id="main">
       <picture>
-        <Image
-          src="/favicon/kuma.jpg"
-          alt="kumamoto"
-          width={500}
-          height={500}
-        />
+        <img src="/favicon/kuma.jpg" alt="kumamoto" />
       </picture>
 
       {/* about */}
@@ -51,12 +46,7 @@ export default async function Home() {
         <ul>
           <li>
             <a href="/creationDetail/1">
-              <Image
-                src="/favicon/kuma.jpg"
-                alt="kumamoto1"
-                width={300}
-                height={300}
-              />
+              <img src="/favicon/kuma.jpg" alt="kumamoto1" />
               <div>
                 <h3>2004/04/04</h3>
                 <p>
@@ -67,12 +57,7 @@ export default async function Home() {
           </li>
           <li>
             <a href="/creationDetail/1">
-              <Image
-                src="/favicon/kuma.jpg"
-                alt="kumamoto2"
-                width={300}
-                height={300}
-              />
+              <img src="/favicon/kuma.jpg" alt="kumamoto2" />
               <div>
                 <h3>2004/04/04</h3>
                 <p>
