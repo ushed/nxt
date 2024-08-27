@@ -1,8 +1,11 @@
-// app/page.tsx
-import Image from "next/image";
 import Link from "next/link";
+import { getBlogData, BlogPost } from "./blog/data";
 
 export default async function Home() {
+  // ブログデータを取得し、最新の6件を抽出
+  const blogPosts: BlogPost[] = await getBlogData();
+  const recentPosts = blogPosts.slice(0, 6); // 上位6件を取得
+
   return (
     <main id="main">
       <picture>
@@ -79,18 +82,12 @@ export default async function Home() {
           Bl<span>og</span>
         </h2>
         <dl>
-          <a href="/blogDetail/3">
-            <dt>2024/08/21</dt>
-            <dd>振り出しに戻ってからの〜</dd>
-          </a>
-          <a href="/blogDetail/2">
-            <dt>2024/08/12</dt>
-            <dd>個人サイト無理ゲー</dd>
-          </a>
-          <a href="/blogDetail/1">
-            <dt>2024/07/20</dt>
-            <dd>何となくやっていく</dd>
-          </a>
+          {recentPosts.map((post) => (
+            <Link key={post.id} href={`/blog/${post.id}`}>
+              <dt>{post.date}</dt>
+              <dd>{post.title}</dd>
+            </Link>
+          ))}
         </dl>
         <a href="/blog" className="btn_a">
           <div className="btn">
