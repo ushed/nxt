@@ -26,7 +26,14 @@ export default function RootLayout({
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css"
         />
-        <script src="/static/home.js" defer></script>
+        <link rel="icon" href="/favicon/36icon.png" />
+        {/* OGP タグの設定 */}
+        <meta property="og:title" content="悠々記" />
+        <meta property="og:description" content="36の日記です。" />
+        <meta property="og:image" content="public/favicon/kuma.jng" />
+        <meta property="og:url" content="https://nxt-11k.pages.dev/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="ja_JP" />
       </head>
       <body className={inter.className}>
         <Header />
