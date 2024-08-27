@@ -25,8 +25,8 @@ type CreationContentProps = {
 const CreationContent: FC<CreationContentProps> = ({ slug, creation }) => {
   return (
     <section id="creation" className="wrapper">
-      <h2>{creation.title}</h2>
       <h3>{creation.date}</h3>
+      <h2>{creation.title}</h2>
       <img src={creation.thumbnail} alt={creation.title} />
       <MDXRemote {...creation.text} />
       <Link href="/creation" className="btn_a">
