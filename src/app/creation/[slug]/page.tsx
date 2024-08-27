@@ -3,6 +3,21 @@ import fs from "fs";
 import path from "path";
 import { serialize } from "next-mdx-remote/serialize";
 import dynamic from "next/dynamic";
+import { getCreationData } from "../data";
+import type { Metadata } from "next";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const creation = await getCreationData(params.slug);
+
+  return {
+    title: `${creation.title} - 悠々記`,
+    description: `詳細ページ :${creation.title}`,
+  };
+}
 
 export async function generateStaticParams() {
   const creationDirectory = path.join(process.cwd(), "_creation.posts");

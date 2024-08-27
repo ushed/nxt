@@ -2,6 +2,12 @@
 import { FC } from "react";
 import Link from "next/link";
 import { getAllCreations, CreationType } from "./data";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "悠々記 - 作品一覧",
+  description: "36の作品を一覧で表示します。",
+};
 
 const CreationPage: FC = async () => {
   const creationPosts: CreationType[] = await getAllCreations();
