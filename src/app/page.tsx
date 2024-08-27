@@ -1,7 +1,12 @@
 import Link from "next/link";
+import { getAllCreations, CreationType } from "./creation/data";
 import { getBlogData, BlogPost } from "./blog/data";
 
 export default async function Home() {
+  // 作成物データを取得し、最新の6件を抽出
+  const creationPosts: CreationType[] = await getAllCreations();
+  const recentCreations = creationPosts.slice(0, 6); // 上位6件を取得
+
   // ブログデータを取得し、最新の6件を抽出
   const blogPosts: BlogPost[] = await getBlogData();
   const recentPosts = blogPosts.slice(0, 6); // 上位6件を取得
@@ -47,28 +52,17 @@ export default async function Home() {
           Crea<span>tions</span>
         </h2>
         <ul>
-          <li>
-            <a href="/creationDetail/1">
-              <img src="/favicon/kuma.jpg" alt="kumamoto1" />
-              <div>
-                <h3>2004/04/04</h3>
-                <p>
-                  あああああああああああああああああああああああああああああああああああああ
-                </p>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="/creationDetail/1">
-              <img src="/favicon/kuma.jpg" alt="kumamoto2" />
-              <div>
-                <h3>2004/04/04</h3>
-                <p>
-                  あああああああああああああああああああああああああああああああああああああ
-                </p>
-              </div>
-            </a>
-          </li>
+          {recentCreations.map((post) => (
+            <li key={post.id}>
+              <Link href={`/creation/${post.id}`}>
+                <img src={post.thumbnail} alt={post.title} />
+                <div>
+                  <h3>{post.date}</h3>
+                  <p>{post.title}</p>
+                </div>
+              </Link>
+            </li>
+          ))}
         </ul>
         <Link href="/creation" className="btn_a">
           <div className="btn" style={{ marginTop: "100px" }}>
