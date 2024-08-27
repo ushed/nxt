@@ -20,7 +20,7 @@ type BlogType = {
 
 const fetchBlogData = async (slug: string): Promise<BlogType> => {
   try {
-    const mdxFilePath = path.join(process.cwd(), `_posts/${slug}.mdx`);
+    const mdxFilePath = path.join(process.cwd(), `_blog.posts/${slug}.mdx`);
     const mdxSource = fs.readFileSync(mdxFilePath, "utf-8");
 
     const serializedContent = await serialize(mdxSource, {

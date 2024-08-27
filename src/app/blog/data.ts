@@ -3,7 +3,7 @@ import fs from "fs";
 import path from "path";
 import { serialize } from "next-mdx-remote/serialize";
 
-const blogDirectory = path.join(process.cwd(), "_posts");
+const blogDirectory = path.join(process.cwd(), "_blog.posts");
 
 export type BlogPost = {
   id: string;
