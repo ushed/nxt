@@ -1,3 +1,4 @@
+// src/app/creation/data.ts
 import fs from "fs";
 import path from "path";
 import { serialize } from "next-mdx-remote/serialize";

@@ -4,6 +4,14 @@ import path from "path";
 import { serialize } from "next-mdx-remote/serialize";
 import CreationContent from "./CreationContent";
 
+export async function generateStaticParams() {
+  const slugs = ["1", "2"];
+
+  return slugs.map((slug) => ({
+    params: { slug },
+  }));
+}
+
 type CreationType = {
   title: string;
   date: string;
