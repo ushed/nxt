@@ -58,8 +58,46 @@ h1 {
   margin-left: 50px;
   font-size: 2rem !important;
 }
+h2 {
+  font-size: 2.5rem !important;
+  text-align: center;
+}
 h3 {
-  font-size: 1rem;
+  font-size: 1rem !important;
+  margin: 30px 7px 20px 7px !important;
+}
+
+h4 {
+  position: relative;
+  font-size: 1.5rem !important;
+  margin: 50px 0 15px 0 !important;
+  padding-left: 2em; /* 肉球のサイズに合わせて調整 */
+  line-height: 2 !important;
+  border-bottom: double 5px var(--Accent-color);
+  /*display: inline-block;*/
+}
+h4:before {
+  content: "";
+  position: absolute;
+  height: 18px;
+  width: 25px;
+  background: var(--Accent-color); /* 中央の肉球部分の色 */
+  border-radius: 50%;
+  top: 10px;
+  left: 0;
+}
+h4:after {
+  content: "";
+  position: absolute;
+  height: 9px;
+  width: 6px;
+  background: rgba(255, 255, 255, 0); /* 肉球の周りの枠線 */
+  border-radius: 50%;
+  top: 8px;
+  left: 8px;
+  box-shadow: -12px -3px 0 0 var(--Accent-color),
+    -3px -10px 0 0 var(--Accent-color), 7px -10px 0 0 var(--Accent-color),
+    16px -3px 0 0 var(--Accent-color);
 }
 
 img {
@@ -164,7 +202,7 @@ span {
 #creation ul li img {
   width: 100%;
   height: auto;
-  margin-bottom: 10px;
+  margin-bottom: -13px;
 }
 
 #creation ul li:hover {
@@ -333,10 +371,14 @@ span {
   #creation ul li a {
     display: flex;
   }
+  #creation ul li a div {
+    margin-top: -18px;
+    width: 70%;
+  }
 
   #creation ul li img {
     height: 98px;
-    width: auto;
+    width: 30%;
   }
 
   #creation ul li p {

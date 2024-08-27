@@ -27,7 +27,11 @@ const CreationContent: FC<CreationContentProps> = ({ slug, creation }) => {
     <section id="creation" className="wrapper">
       <h3>{creation.date}</h3>
       <h2>{creation.title}</h2>
-      <img src={creation.thumbnail} alt={creation.title} />
+      <img
+        src={creation.thumbnail}
+        alt={creation.title}
+        style={{ marginBottom: "0" }}
+      />
       <MDXRemote {...creation.text} />
       <Link href="/creation" className="btn_a">
         <div className="btn" style={{ marginTop: "100px" }}>
