@@ -12,7 +12,7 @@ const inter = Hina_Mincho({
 
 export const metadata: Metadata = {
   title: "悠々記",
-  description: "36の日記です。月1で何かをアップしていきます。",
+  description: "36の日記です。",
 };
 
 export default function RootLayout({
@@ -32,7 +32,10 @@ export default function RootLayout({
         <link rel="icon" href="/favicon/36icon.png" />
         {/* OGP タグの設定 */}
         <meta property="og:title" content="悠々記" />
-        <meta property="og:description" content="36の日記です。" />
+        <meta
+          property="og:description"
+          content="36の日記です。月1で何かをアップしていきます。"
+        />
         <meta property="og:image" content="/favicon/kuma.jng" />
         <meta property="og:url" content="https://nxt-11k.pages.dev/" />
         <meta property="og:type" content="website" />
