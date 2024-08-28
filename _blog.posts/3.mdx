@@ -1,26 +1,63 @@
 ---
-title: "Dynamic Routing and Static Generation"
-excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus."
-coverImage: "/assets/blog/dynamic-routing/cover.jpg"
-date: "2020-03-16T05:35:07.322Z"
+title: "振り出しに戻ってからの〜"
+date: "2024/08/21"
+excerpt: "/"
+coverImage: "/"
 author:
   name: 36
-  picture: "/assets/blog/authors/jj.jpeg"
+  picture: "/"
 ogImage:
-  url: "/assets/blog/dynamic-routing/cover.jpg"
+  url: "/"
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
+## 振り出しに<span>戻ってからの〜</span>
 
-Venenatis cras sed felis eget velit. Consectetur libero id faucibus nisl tincidunt. Gravida in fermentum et sollicitudin ac orci phasellus egestas tellus. Volutpat consequat mauris nunc congue nisi vitae. Id aliquet risus feugiat in ante metus dictum at tempor. Sed blandit libero volutpat sed cras. Sed odio morbi quis commodo odio aenean sed adipiscing. Velit euismod in pellentesque massa placerat. Mi bibendum neque egestas congue quisque egestas diam in arcu. Nisi lacus sed viverra tellus in. Nibh cras pulvinar mattis nunc sed. Luctus accumsan tortor posuere ac ut consequat semper viverra. Fringilla ut morbi tincidunt augue interdum velit euismod.
+Next.js のフレームワークに引っ越ししていく中で、マークダウンを用いた
+記事の作り方や、動的ルーティングを使ったレンダリング、SSR などについて、<span>理解が 深まってきている</span>のを、
+感じることができました。
 
-### Lorem Ipsum
-
-co36@CO36noMacBook-Air ~ % cd my-room
-co36@CO36noMacBook-Air my-room % cd nxt
-co36@CO36noMacBook-Air nxt % git init
-Initialized empty Git repository in /Users/co36/my-room/nxt/.git/
-co36@CO36noMacBook-Air nxt % git add .
-co36@CO36noMacBook-Air nxt % git commit -m "Initial commit"
-co36@CO36noMacBook-Air nxt % git remote add origin git@github.com:ushed/tsx.git
-co36@CO36noMacBook-Air nxt % git push origin main
+<br />
+<br />
+Next.js のフレームワークを利用して、個人サイトを作ることができたんですが、
+何故かハンバーガーメニューを押してもそこに当ててる js
+ファイルがうまく機能しない問題があったり、 デプロイした時にまさかのまた
+Cloudflare Pages からエラーを吐かれて、 しかも対応することができませんでした(´•̥
+ω •̥`)。
+<br />
+<br />
+調べていく中で以前使っていた bun のフレームワークをデプロイしていた時に出ていた、
+エラーメッセージを解決できるような気がしたので、Next.jsで学んだことを活かして、 hono
+の フレームワークに戻そうと思いました。
+<br />
+<br />
+以前は hono のフレームワークにそのまんま、ページごとに生HTMLファイル
+作成して、全部1から作っていたのでrenderer.tsxなどを使った感じの構造にすることに決めました。
+後の引っ越しは、ほぼほぼすぐ日できたんですがマークダウンを使った
+ブログのシステムが、調べた感じ自分の力じゃ
+<span>無理っぽい</span>
+感じがしたので、ページを追加して更新するたびに
+変更が関係するところを自分で書き換えるようにしました。
+<br />
+<br />
+そして<span>ついに完成いたしました!</span> <br />
+Cloudflare Pages にデプロイするときに少しエラーが出てきましたが、 調べて解決できてついに個人サイトの公開にたどり着くことができました(屮`º∀º´)屮ｲｪｱ！
+<br />
+<br />
+いや〜なんやかんやありましたが、自作の個人サイトを作ることができました
+<span>✌︎</span>( ˘꒳˘ )<span>✌︎</span>ｲｴｰｲ 特に振り出しに
+<span>戻ってからの</span>
+作業は特に、スーと言ってくれました。 でも、改善したいところもいくつかあるのでそれは、気が向いたらちょくちょくやっていこうと思います。
+<br />
+特にお問合せの送信を押した後のページ遷移を、直したいところです。外部のこの部分は一番簡単にできそうな、
+外部のアセットを利用したので、少し難しんですよね。それでも指定したページに飛ぶようにしたのに、
+全然飛んでくれないですよね。( ;`･～･)ぐぬぬ
+<br />
+また、今回途中で方向転換した時に使った<span>Next.js</span>
+で個人サイトを作れるようになりたいですね。マークダウン更新で、楽ができそうですし…
+<br />
+<br />
+皆さんも自作の個人サイト作ってみたいなと、思ったらぜひはじめの一歩を踏み出してみてください。
+<br />
+<span>案外ハードルは低いので!!</span>
+<br />
+では、良い人生を(๑'ᴗ'๑)و⚑

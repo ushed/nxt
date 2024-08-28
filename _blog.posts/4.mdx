@@ -1,26 +1,59 @@
 ---
-title: "4"
-excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus."
-coverImage: "/assets/blog/dynamic-routing/cover.jpg"
-date: "2020-03-16T05:35:07.322Z"
+title: "デプロイした後が大事"
+date: "2024/08/28"
+excerpt: "/"
+coverImage: "/"
 author:
   name: 36
-  picture: "/assets/blog/authors/jj.jpeg"
+  picture: "/"
 ogImage:
-  url: "/assets/blog/dynamic-routing/cover.jpg"
+  url: "/"
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
+## デプロイした<span>後</span>が大事
 
-Venenatis cras sed felis eget velit. Consectetur libero id faucibus nisl tincidunt. Gravida in fermentum et sollicitudin ac orci phasellus egestas tellus. Volutpat consequat mauris nunc congue nisi vitae. Id aliquet risus feugiat in ante metus dictum at tempor. Sed blandit libero volutpat sed cras. Sed odio morbi quis commodo odio aenean sed adipiscing. Velit euismod in pellentesque massa placerat. Mi bibendum neque egestas congue quisque egestas diam in arcu. Nisi lacus sed viverra tellus in. Nibh cras pulvinar mattis nunc sed. Luctus accumsan tortor posuere ac ut consequat semper viverra. Fringilla ut morbi tincidunt augue interdum velit euismod.
+#### はじめに
 
-### Lorem Ipsum
+先日、自作した個人ページをデプロイして公開しました。知人・友人などにも見せて、
+意見を聞いてみました。その意見を参考にし個人サイトのアップデートを行いました。
 
-co36@CO36noMacBook-Air ~ % cd my-room
-co36@CO36noMacBook-Air my-room % cd nxt
-co36@CO36noMacBook-Air nxt % git init
-Initialized empty Git repository in /Users/co36/my-room/nxt/.git/
-co36@CO36noMacBook-Air nxt % git add .
-co36@CO36noMacBook-Air nxt % git commit -m "Initial commit"
-co36@CO36noMacBook-Air nxt % git remote add origin git@github.com:ushed/tsx.git
-co36@CO36noMacBook-Air nxt % git push origin main
+#### 主な変更点
+
+<span>ー</span> フレームワーク <span>ー</span>
+
+フレームワークを hono から Next.js に変更しました。<br />
+これはクライアント側の意見になるんですが、悠々記を更新するにあたって hono では MDX 対応
+されていないため<span>更新コストがかかる</span>という点が一番ネックな点となりました。その点
+Next.js では MDX 対応しているため更新にかかる労力が最小限で済むので、長続きできるように変更しました。
+
+<br />
+また Next.js は<span>サーバーサイドレンダリングや静的サイトジェネレーター</span>を
+必要とするプロジェクトに適していて、ブログに最適のフレームワークであると判断しました。
+
+<br />
+<br />
+<span>ー</span> ブログに見出しの追加 <span>ー</span>
+
+詳細ページに見出しをつけて、まとまりを作ってみました。そのほうが読みやすいとの意見が出てきていたので、確かに
+と思い実装してみました。また見出しに<span>肉球</span>を CSS 直にデザインして使ったところが個人的には、一押しポイントです。
+
+<br />
+<br />
+<span>ー</span> ライトモードとダークモード <span>ー</span>
+
+ライトモードからダークモードの切り替えの時が<span>落ち着いた感じがいい</span>との意見がありました。
+シンプルかつ大人しい感じのサイトを作りたいと思っていたので、この意見は取り込んだ方がいいなと感じ、
+取り込んでみました。具体的には文字の色の変化を大人しくしてみました。
+
+#### 感想
+
+今回はデプロイした後にいろんな人に見せて、フィードバックをもらいました。こうして振り返ってみると、デプロイした後に
+出てくる周りからの意見を取り入れることで、洗練されたサイトを作ることができたと感じています。いろんな意見を出してくれた
+みんなには、本当に感謝感激雨霰です!
+
+また<span>主な変更点</span>では紹介しなかった細かな部分の修正も入れているので、元のサイトを知っている方はそれも当てて
+みてください!!この投稿より前に投稿している記事も、時間があるときに修正していこうと思います。
+
+皆さんもぜひに中作った時には、それを実際に公開していろんな人から意見を求めてみてはいかがでしょうか?
+
+ではいい人生を(๑'ᴗ'๑)و⚑
