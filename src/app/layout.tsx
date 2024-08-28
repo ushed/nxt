@@ -36,7 +36,7 @@ export default function RootLayout({
           property="og:description"
           content="36の日記です。月1で何かをアップしていきます。"
         />
-        <meta property="og:image" content="/favicon/kuma.jng" />
+        <meta property="og:image" content="/favicon/yuyuki.jpg" />
         <meta property="og:url" content="https://nxt-11k.pages.dev/" />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="ja_JP" />
