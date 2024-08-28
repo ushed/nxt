@@ -33,7 +33,7 @@ export default async function Home() {
           基本的に月1で何かをアップする予定しています。
           <br />「
           <a href="/creation">
-            <span>creation</span>
+            <span>Creation</span>
           </a>
           」 では創作物を紹介し、「
           <a href="/blog">

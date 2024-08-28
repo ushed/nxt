@@ -1,11 +1,14 @@
 //src/app/layout.tsx
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Hina_Mincho } from "next/font/google";
 import "./globals.css";
 import Header from "@/app/_component/header/header";
 import Footer from "@/app/_component/footer/footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Hina_Mincho({
+  subsets: ["latin"],
+  weight: "400",
+});
 
 export const metadata: Metadata = {
   title: "悠々記",
