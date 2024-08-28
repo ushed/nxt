@@ -12,7 +12,7 @@ const inter = Hina_Mincho({
 
 export const metadata: Metadata = {
   title: "悠々記",
-  description: "36の日記です。",
+  description: "36の日記です。月1で何かをアップしていきます。",
 };
 
 export default function RootLayout({
