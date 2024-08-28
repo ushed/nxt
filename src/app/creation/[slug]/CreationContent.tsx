@@ -30,8 +30,9 @@ const CreationContent: FC<CreationContentProps> = ({ slug, creation }) => {
       <img
         src={creation.thumbnail}
         alt={creation.title}
-        style={{ marginBottom: "0" }}
+        style={{ marginBottom: "0", width: "100%", height: "auto" }}
       />
+
       <MDXRemote {...creation.text} />
       <Link href="/creation" className="btn_a">
         <div className="btn" style={{ marginTop: "100px" }}>
