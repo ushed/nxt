@@ -30,7 +30,7 @@ export default async function Home() {
           <li>エンジニアを目指してます</li>
         </ul>
         <p>
-          基本的に月1で何かをアップする予定しています。
+          基本的に月1回、何か新しいコンテンツをアップする予定です。
           <br />「
           <a href="/creation">
             <span>Creation</span>
