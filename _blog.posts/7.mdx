@@ -1,0 +1,78 @@
+---
+title: "GitHubの備忘録(Fork)"
+date: "2024/08/29"
+excerpt: "/"
+coverImage: "/"
+author:
+  name: 36
+  picture: "/"
+ogImage:
+  url: "/"
+---
+
+## <span>GitHub</span>の備忘録(Fork)
+
+#### はじめに
+
+GitHub を用いた実践的な流れやコードを図を用いたりして、紹介するとともに個人的な備忘録として作ろうと思います。 <br />
+また初心者の方は、このブログを読む前にこちら(<span>[基礎的な Git 用語](https://nxt-11k.pages.dev/blog/6)</span>)
+を読むことをお勧めします。
+
+#### Git 操作の大まかな流れ
+
+![GitHub](/asset/blog/GitHub.png)
+基本的に上のフロー図が大体の流れになっています。 <br />
+自分は基本 Fork というツールを利用するため、コマンドを打ち込む「CUI」操作ではなく、
+ボタンぽちぽちの「GUI」操作で上図の内容を行なっています。上図の流れを理解していれば、
+Fork は感覚的に操作可能なのでお勧めです。
+
+<br />
+<br />
+
+#### Fork を使う際に役立つ追加知識
+
+<span>ー</span> ステージ <span>ー</span>
+
+![Fork](/asset/blog/Fork.png)
+変更した箇所を add を実行、ステージに上げてからにコミットするやり方があります。 <br />
+git add コマンドを使って変更をステージングすることで、変更を部分的にコミットでき、
+複数の変更が混ざらないように管理することができます。
+
+<br />
+<br />
+
+<span>ー</span> スタッシュ <span>ー</span>
+
+スタッシュは、未コミットの変更を一時的に保存し、作業を一旦中断して他の作業に移る際に便利です。
+保存された変更は後で再適用することや削除することもできます。
+
+<br />
+<br />
+
+<span>ー</span> コンフリクト <span>ー</span>
+
+主にマージする際にチームメンバーとの異なる変更の重なりがある時に出てくるエラーメッセージのようなものです。
+コンフリクトが出ても焦らず、どこがかぶっているのかを探し、落ち着いて取捨選択をしてください。
+そうすれば最悪の結果にはなりません。
+
+<br />
+<br />
+
+#### 感想
+
+ブログを書くにあたって、軽く Fork について調べ直していく中で、自分がまだ知らない Git コマンドがありました。
+今回はそのコマンドについては触れませんでしたが、使用感を見て書き込むか決めたいと思います。
+
+では良い人生を(๑'ᴗ'๑)و⚑
+
+#### 関連ブログ
+
+<span>✔︎</span> 　[Git/GitHubの違い](https://nxt-11k.pages.dev/blog/5) <br />
+<span>✔︎</span> 　[基礎的なGit用語](https://nxt-11k.pages.dev/blog/6) <br />
+
+#### 参考サイト
+
+◉ 　<span>[完全初心者向け Git 用語集](https://qiita.com/shinshingodmt/items/637cf9e5c6660509c460)</span><br />
+◉ 　<span>[GitHub の全体像と使い方を解説します](https://vector-ium.com/github-basic/)</span><br />
+◉ 　<span>[【Fork】基本的なコマンドの使い方](https://qiita.com/__tomotomon/items/51abf366f973235bb9c9)</span><br />
+◉ 　<span>[Git の基本コマンドまとめ](https://www.youtube.com/watch?v=f4BRgGAXyek)</span><br />
