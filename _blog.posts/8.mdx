@@ -1,0 +1,83 @@
+---
+title: "Flutter備忘録"
+date: "2024/09/05"
+excerpt: "/"
+coverImage: "/"
+author:
+  name: 36
+  picture: "/"
+ogImage:
+  url: "/"
+---
+
+## <span>Flutter</span>備忘録
+
+#### はじめに
+
+Flutter を使ったアプリ開発をしたくなったので、忘れそうなことだけピックアップしてみました。<br />
+環境構築や詳しい内容はこちら
+(<span>[いちから始める Flutter モバイルアプリ開発](https://zenn.dev/heyhey1028/books/flutter-basics)</span>)
+からどうぞ！
+
+#### Flutter の基本的なコマンド
+
+<span>●</span> flutter create [プロジェクト名]
+
+Flutter プロジェクトを作成するコマンドです。" <span>flutter create -e [任意のプロジェクト名]</span> "
+このように打つと、最小構成のプロジェクトを作成する事ができます。
+
+<br />
+<br />
+
+<span>●</span> open -a Simulator
+
+iOS のシミュレーターを起動できます<br />
+ちなみに、これは<span> MacOS ユーザー向けのコマンド</span>であり、Windows や Linux ユーザー
+には<span>対応していない</span>ので注意を！！
+
+<br />
+<br />
+
+<span>●</span> flutter devices
+
+Flutter アプリを起動する際に使えるデバイスを確認できるコマンドです。
+シミュレーターが起動していればシミュレーター、実機が繋がっていれば実機などが表示されます。
+
+<br />
+<br />
+
+<span>●</span> flutter run -d [デバイスID]
+
+-d オプションでデバイスを指定してアプリを起動するコマンドです。この状態で
+「 r → Enter キー 」でリフレッシュ、「 R → Enter 」でホットリロードをアプリにかけることができます。
+
+<br />
+<br />
+
+<span>●</span> android のシミュレーター
+
+<span>①</span>
+Android Studio を起動し、トップページの 「 more action 」から Virtual Device Manager
+をクリック
+
+<span>②</span>
+Create virtual device をクリックし、起動したいデバイスを選択、ダウンロード、完了したら、Finish
+をクリック
+
+<span>③</span>再度 API を選択し、設定を確認し、Finish をクリック
+
+<span>④</span>
+作成したデバイスがリストに表示されるので再生ボタンをクリックして起動
+
+<span>⑤</span>
+シミュレータが起動すれば完了!!
+
+<br />
+<br />
+
+#### 感想
+
+dart について、うまいち理解出来なかったけど、Flutter の大体の構造は理解できたので、
+とりあえず作りたくなった、バイトの収入が一目でわかるようなアプリを開発していきたいと思います。
+
+では良い人生を(๑'ᴗ'๑)و⚑
