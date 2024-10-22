@@ -218,7 +218,7 @@ span {
   border: 3px solid var(--Accent-Light-color);
   opacity: 0.7;
   img {
-    transform: scale(1.015, 1.015);
+    transform: scale(1, 1);
     border-radius: 20px 20px 0 0;
   }
 }
@@ -234,7 +234,7 @@ span {
 }
 
 #creation .btn_a {
-  width: 80%;
+  width: 50%;
   margin: 0 auto;
   display: block;
 }
@@ -247,6 +247,7 @@ span {
 #creation .btn_txt {
   position: relative;
   padding-right: 20px;
+  font-size: 1.1rem;
 }
 #creation .btn:hover {
   background-color: var(--Accent-color);
@@ -307,7 +308,7 @@ span {
 }
 
 #blog .btn_a {
-  width: 80%;
+  width: 50%;
   margin: 0 auto;
   display: block;
 }
@@ -320,7 +321,7 @@ span {
 #blog .btn_txt {
   position: relative;
   padding-right: 20px;
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 #blog .btn:hover {
   background-color: var(--Accent-color);
@@ -414,6 +415,10 @@ span {
     }
   }
 
+  #creation .btn_a {
+    width: 80%;
+  }
+
   /*blog*/
   #blog a {
     flex-direction: column;
@@ -433,5 +438,8 @@ span {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+  #blog .btn_a {
+    width: 80%;
   }
 }
