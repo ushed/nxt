@@ -1,6 +1,6 @@
 /* src/app/global.css */
 html {
-  font-size: 130%; /* 16px*1.3 */
+  font-size: 120%; /* 16px*1.3 */
 }
 
 :root {
@@ -130,7 +130,6 @@ span {
   font-size: 0.9rem;
   padding: 1% 5%;
 }
-
 .sec-title {
   font-size: 1.5rem;
   text-align: center;
@@ -321,6 +320,7 @@ span {
 #blog .btn_txt {
   position: relative;
   padding-right: 20px;
+  font-size: 1rem;
 }
 #blog .btn:hover {
   background-color: var(--Accent-color);
