@@ -18,8 +18,8 @@ export default function ModeToggle({ navClassName }: ModeToggleProps) {
     const headerElement = document.getElementById("header");
     const navElement = document.querySelector(`.${navClassName}`);
 
-    if (savedTheme === "light-mode") {
-      document.body.classList.add("light-mode");
+    if (savedTheme === "dark-mode") {
+      document.body.classList.add("dark-mode");
       headerElement?.classList.add(styles.lightMode);
       navElement?.classList.add(styles.lightMode);
       setIsLightMode(true);
@@ -33,22 +33,22 @@ export default function ModeToggle({ navClassName }: ModeToggleProps) {
     const navElement = document.querySelector(`.${navClassName}`);
 
     if (newMode) {
-      document.body.classList.add("light-mode");
+      document.body.classList.add("dark-mode");
       headerElement?.classList.add(styles.lightMode);
       navElement?.classList.add(styles.lightMode);
-      localStorage.setItem("theme", "light-mode");
+      localStorage.setItem("theme", "dark-mode");
     } else {
-      document.body.classList.remove("light-mode");
+      document.body.classList.remove("dark-mode");
       headerElement?.classList.remove(styles.lightMode);
       navElement?.classList.remove(styles.lightMode);
-      localStorage.setItem("theme", "dark-mode");
+      localStorage.setItem("theme", "light-mode");
     }
   };
 
   return (
     <li>
       <i className={styles.mode} onClick={toggleMode}>
-        {isLightMode ? <IconParkTwotoneSun /> : <IconParkTwotoneMoon />}
+        {isLightMode ? <IconParkTwotoneMoon /> : <IconParkTwotoneSun />}
       </i>
     </li>
   );

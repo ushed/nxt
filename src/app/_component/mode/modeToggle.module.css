@@ -9,6 +9,6 @@
   color: var(--Accent-color);
 }
 
-.light-mode .nav_mode {
+.dark-mode .nav_mode {
   background: var(--white_A-color) !important;
 }

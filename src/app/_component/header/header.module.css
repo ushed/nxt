@@ -1,5 +1,5 @@
 .header {
-  background: var(--dark_A-color);
+  background: var(--white_A-color);
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -37,8 +37,8 @@
     2px -2px 10px var(--Accent-color);
 }
 
-.light-mode .header {
-  background: var(--white_A-color);
+.dark-mode .header {
+  background: var(--dark_A-color);
 }
 
 @media screen and (max-width: 768px) {

@@ -13,37 +13,37 @@ html {
 }
 
 body {
-  background-color: var(--dark-color);
-  color: var(--white-color);
+  background-color: var(--white-color);
+  color: var(--dark-color);
   font-family: "Sawarabi Mincho";
   transition: all 0.5s ease-out;
 }
 
-.light-mode {
-  background-color: var(--white-color);
-  color: var(--dark-color);
-}
-
-.light-mode #header {
-  background: var(--white_A-color);
+.dark-mode {
+  background-color: var(--dark-color);
   color: var(--white-color);
 }
 
-.light-mode #blog dt,
-.light-mode #blog dd {
-  border-bottom-color: var(--dark-color);
+.dark-mode #header {
+  background: var(--dark_A-color);
+  color: var(--dark-color);
 }
 
-.light-mode #blog dl {
-  border-top-color: var(--dark-color);
-}
-.light-mode #creation ul li {
-  border: 1px solid var(--dark_A-color);
+.dark-mode #blog dt,
+.dark-mode #blog dd {
+  border-bottom-color: var(--white-color);
 }
 
-.light-mode #creation .btn,
-.light-mode #blog .btn {
-  border-color: var(--dark-color);
+.dark-mode #blog dl {
+  border-top-color: var(--white-color);
+}
+.dark-mode #creation ul li {
+  border: 1px solid var(--white-color);
+}
+
+.dark-mode #creation .btn,
+.dark-mode #blog .btn {
+  border-color: var(--white-color);
 }
 
 a {
@@ -199,7 +199,7 @@ span {
   width: 32%;
   height: 310px;
   margin-bottom: 50px;
-  border: 0.5px solid var(--white-color);
+  border: 0.5px solid var(--dark-color);
   transition: all 0.3s;
 }
 #creation ul li a div {
@@ -240,7 +240,7 @@ span {
 }
 #creation .btn {
   text-align: center;
-  border: 1px solid var(--white-color);
+  border: 1px solid var(--dark-color);
   padding: 10px 0;
   transition: all 0.5s;
 }
@@ -262,7 +262,7 @@ span {
 #blog dl {
   display: flex;
   flex-wrap: wrap;
-  border-top: 1px solid var(--white-color);
+  border-top: 1px solid var(--dark-color);
   margin-bottom: 40px;
 }
 
@@ -274,7 +274,7 @@ span {
 
 #blog dt,
 #blog dd {
-  border-bottom: 1px solid var(--white-color);
+  border-bottom: 1px solid var(--dark-color);
   padding: 30px;
 }
 
@@ -314,7 +314,7 @@ span {
 }
 #blog .btn {
   text-align: center;
-  border: 1px solid var(--white-color);
+  border: 1px solid var(--dark-color);
   padding: 10px 0;
   transition: all 0.5s;
 }
@@ -325,7 +325,7 @@ span {
 }
 #blog .btn:hover {
   background-color: var(--Accent-color);
-  color: var(--white-color);
+  color: var(--dark-color);
 }
 
 /*sp*/
