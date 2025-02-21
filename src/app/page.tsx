@@ -13,9 +13,11 @@ export default async function Home() {
 
   return (
     <main id="main">
-      <picture>
-        <img src="/favicon/kuma.jpg" alt="kumamoto" />
-      </picture>
+      <div className="top_pic">
+        <picture>
+          <img src="/favicon/kuma.jpg" alt="kumamoto" />
+        </picture>
+      </div>
 
       {/* about */}
       <section id="about" className="wrapper">

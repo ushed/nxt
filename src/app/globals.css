@@ -443,3 +443,9 @@ span {
     width: 80%;
   }
 }
+@media screen and (min-width: 1920px) {
+  .top_pic {
+    width: 1920px;
+    margin: 0 auto 0 auto;
+  }
+}
