@@ -6,8 +6,8 @@
   margin-right: 30px;
 }
 
-.light-mode .nav_mode {
-  background: var(--white_A-color) !important;
+.dark-mode .nav_mode {
+  background: var(--dark_A-color) !important;
 }
 
 .nav_links li {
@@ -22,7 +22,7 @@
 .burger div {
   width: 25px;
   height: 3px;
-  background-color: var(--white-color);
+  background-color: var(--dark-color);
   margin: 5px;
   transition: transform 0.3s;
 }
@@ -46,13 +46,14 @@
   bottom: -5px;
   width: 0;
   height: 2px;
-  background-color: currentColor;
+  background-color: currentColor; /* 現在の色を使用 */
   transition: width 0.3s ease, left 0.3s ease;
 }
 
 .nav_links li:hover::after {
   width: 100%;
   left: 0;
+  background-color: white;
 }
 
 @media screen and (max-width: 768px) {
