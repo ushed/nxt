@@ -395,6 +395,9 @@ span {
     margin-top: -18px;
     width: 70%;
   }
+  #creation ul li a div p {
+    font-size: 1rem;
+  }
 
   #creation ul li img {
     height: 98px;
