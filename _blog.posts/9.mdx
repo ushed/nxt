@@ -1,0 +1,321 @@
+---
+title: "Dart入門編"
+date: "2025/02/23"
+excerpt: "/"
+coverImage: "/"
+author:
+  name: 36
+  picture: "/"
+ogImage:
+  url: "/"
+---
+
+## <span>Dart</span>入門編
+
+#### はじめに
+
+Flutter を使ったアプリ開発を始めて約 5 ヶ月が経ちました( °ω° )。
+
+当初は Web 開発と同じような感覚で進められると思っていましたが、実際には学ぶことも多く、
+特に外部アセットを活用してオリジナルの要素を加える場面で苦戦しました。
+そんなとき、Flutter を使った長期ハッカソン(<span>[DIG IT KITAQ](https://zenn.dev/heyhey1028/books/flutter-basics)</span>)
+の存在を知り、思い切って参加。
+
+その過程で Dart という言語の重要性を改めて実感しました。
+本記事では、Flutter の基盤となる Dart について、入門レベルを丁寧に解説していきます。
+
+#### Flutter の構造
+
+まず Flutter の新規プロジェクトを立ち上げる時に、最初に下記のように生成されている基本的なカウンターアプリの
+テンプレートコードを元にどのような構造になっているのか、簡単に紹介します。
+
+```dart
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+      ),
+      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key, required this.title});
+
+  final String title;
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  int _counter = 0;
+
+  void _incrementCounter() {
+    setState(() {
+      _counter++;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        title: Text(widget.title),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            const Text(
+              'You have pushed the button this many times:',
+            ),
+            Text(
+              '$_counter',
+              style: Theme.of(context).textTheme.headlineMedium,
+            ),
+          ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _incrementCounter,
+        tooltip: 'Increment',
+        child: const Icon(Icons.add),
+      ),
+    );
+  }
+}
+
+```
+
+<br />
+<br />
+
+<span>①</span>外部パッケージやファイルの読み込み
+
+```dart
+import'package:flutter/material.dart';
+```
+
+<br />
+
+この行では、Flutter の Material デザインライブラリ をインポートしています。
+Material デザインとは、Google が提唱する統一された UI デザインのガイドラインのことです。
+アプリ開発時にデザインを一から作る必要がなく、統一された UI を手軽に実装できます。
+
+<br />
+<br />
+
+<span>②</span>エントリーポイント
+
+```dart
+void main() {
+  runApp(const MyApp());
+}
+```
+
+<br />
+
+<span>●</span> `main` 関数
+<br />→ Flutter
+アプリのエントリーポイントを指定しており、アプリが起動すると最初にこの関数を呼んで実行するよ的な関数です。
+<br />
+
+<span>●</span> `runApp(MyApp())`
+<br />→ MyApp
+のウィジェットをアプリ画面として実行します。ウィジェットは画面に表示される
+テキスト、ボタン、アイコン、画像 などの UI
+を構成する最小単位の部品のようなものです。
+
+<br />
+<br />
+
+<span>③</span>MyApp クラス
+
+```dart
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+      ),
+      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+    );
+  }
+}
+
+```
+
+<br />
+
+<span>●</span> `class MyApp extends StatelessWidget`
+<br />
+StatelessWidget を継承させて MyApp として定義しています。 StatelessWidget は状態を持たないウィジェットを特性として持っています。
+状態を持たないウィジェットとは、作成された後に UI が変わらないつまり、データの変更がウィジェットの中に存在しないということです。
+
+<span>●</span> `const MyApp({super.key});`
+<br />
+const として宣言することは定数として宣言していることと同義で、つまり変数がないことを指しています。
+MyApp に super.key を渡す ことで MyApp のウィジェットを最高効率で構築できるようになります。
+
+<span>●</span> `@override`
+<br />
+MyApp は StatelessWidget を継承しているので、 `@override` を用いて StatelessWidget
+の内部を上書きして書き換えを始めます。
+
+<span>●</span> `Widget build(BuildContext context)`
+<br />
+BuildContext は、ウィジェットツリーの情報を保持し、親ウィジェットとの関係性を把握するための型です。
+context を使うことで、テーマや位置などの情報にアクセスできます。
+
+<span>●</span> `return MaterialApp(~);`
+<br />→ MaterialApp とは Flutter
+のアプリ開発におけるテンプレート（基本構造）を返すという形になっています。
+テンプレートには下記のようなものが入っておりそれぞれを定義付けることができます。
+
+- title: アプリのタイトル（主にタスクマネージャーなどで表示される）
+- theme: アプリのテーマ設定
+- colorScheme: メインの色の設定（`seedColor` に `Colors.deepPurple` を指定）
+- useMaterial3: `true` → Material Design 3 を有効化
+- home: アプリの最初の画面（`MyHomePage`）
+
+<br />
+<br />
+
+<span>④</span>MyHomePage クラス
+
+```dart
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key, required this.title});
+
+  final String title;
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+```
+
+<br />
+
+<span>●</span> `class MyHomePage extends StatefulWidget`
+<br />
+StatefulWidget を継承させて MyHomePage として定義しています。 StatefulWidget は StatelessWidget
+とは反対に状態を持つウィジェットです。 つまり、データの変更がウィジェットの中に存在するということです。
+
+<span>●</span> `const MyHomePage({super.key, required this.title});`
+<br />
+MyHomePage を const として宣言し、title が定義されているとするならばウィジェットを構築せよという命令になっています。
+ここで MyHomePage は StatefulWidget として変数が存在するのに const 定数として定義していることに矛盾を感じるかもしれません。
+しかしMyHomePage の State クラスに変数が含まれており、MyHomePage には変数がないといったイメージになっています。
+まぁとりあえず MyHomePage を const として宣言しても矛盾が起きないと思ってもらえれば大丈夫です。
+
+<span>●</span> `final String title;`
+<br />→ MaterialApp とは Flutter
+アプリの全体構成を定義するためのウィジェットで、テーマ設定やホーム画面、タイトルなどの基本設定を行えます。
+テンプレートには下記のようなものが入っておりそれぞれを定義付けることができます。
+
+- title: アプリのタイトル（主にタスクマネージャーなどで表示される）
+- theme: アプリのテーマ設定
+- colorScheme: メインの色の設定（`seedColor` に `Colors.deepPurple` を指定）
+- useMaterial3: `true` → Material Design 3 を有効化
+- home: アプリの最初の画面（`MyHomePage`）
+
+<br />
+<br />
+
+<span>⑤</span>_MyHomePageState クラス
+
+```dart
+class _MyHomePageState extends State<MyHomePage> {
+  int _counter = 0;
+
+  void _incrementCounter() {
+    setState(() {
+      _counter++;
+    });
+  }
+
+```
+
+<br />
+
+<span>●</span> `class MyApp extends StatelessWidget`
+<br />
+StatelessWidget を継承させて MyApp として定義しています。 StatelessWidget は状態を持たないウィジェットを特性として持っています。
+状態を持たないウィジェットとは、作成された後に UI が変わらないつまり、データの変更がウィジェットの中に存在しないということです。
+
+<span>●</span> `return MaterialApp(~);`
+<br />→ MaterialApp とは Flutter
+のアプリ開発におけるテンプレート（基本構造）を返すという形になっています。
+テンプレートには下記のようなものが入っておりそれぞれを定義付けることができます。
+
+- title: アプリのタイトル（主にタスクマネージャーなどで表示される）
+- theme: アプリのテーマ設定
+- colorScheme: メインの色の設定（`seedColor` に `Colors.deepPurple` を指定）
+- useMaterial3: `true` → Material Design 3 を有効化
+- home: アプリの最初の画面（`MyHomePage`）
+
+<br />
+<br />
+
+<span>⑥</span>Scaffold（画面全体のレイアウト）
+```dart
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+
+```
+
+<br />
+
+<span>●</span> `class MyApp extends StatelessWidget`
+<br />
+StatelessWidget を継承させて MyApp として定義しています。 StatelessWidget は状態を持たないウィジェットを特性として持っています。
+状態を持たないウィジェットとは、作成された後に UI が変わらないつまり、データの変更がウィジェットの中に存在しないということです。
+
+<span>●</span> `return MaterialApp(~);`
+<br />→ MaterialApp とは Flutter
+のアプリ開発におけるテンプレート（基本構造）を返すという形になっています。
+テンプレートには下記のようなものが入っておりそれぞれを定義付けることができます。
+
+- title: アプリのタイトル（主にタスクマネージャーなどで表示される）
+- theme: アプリのテーマ設定
+- colorScheme: メインの色の設定（`seedColor` に `Colors.deepPurple` を指定）
+- useMaterial3: `true` → Material Design 3 を有効化
+- home: アプリの最初の画面（`MyHomePage`）
+
+<br />
+<br />
+
+#### まとめ
+
+Dart はシンプルながらも、Flutter 開発に欠かせない言語です。
+今回紹介したような基本構造を押さえておくことで、これからの開発がずっとスムーズになります。
+
+ちなみに、Flutter の開発では<span> stf と入力して Tab キーを押す </span>だけで、
+StatefulWidget のテンプレートが自動生成されるなど、便利なショートカットがあります。
+ぜひ活用してみてください！
+
+今後も、学んだことやつまずいたポイントを随時このブログにまとめていく予定です。
+
+では良い人生を(๑'ᴗ'๑)و⚑
+```
