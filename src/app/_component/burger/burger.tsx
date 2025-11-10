@@ -38,7 +38,11 @@ export default function Burger() {
             <Link href="/blog">Blog</Link>
           </li>
           <li className={styles.btn}>
-            <Link href="https://ushed.github.io/support">
+            <Link
+              href="https://ushed.github.io/support"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <IconParkTwotoneBigX />
             </Link>
           </li>
