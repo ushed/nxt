@@ -26,7 +26,7 @@ export default async function Home() {
         </h2>
         <ul>
           <li>
-            <span>3</span>6(さぶろう)
+            <span>中野</span> 江三郎
           </li>
           <li>情報システム工学科 3年</li>
           <li>エンジニアを目指して勉強中です。</li>
