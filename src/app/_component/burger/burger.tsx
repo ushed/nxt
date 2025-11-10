@@ -3,7 +3,7 @@
 
 import { useEffect } from "react";
 import Link from "next/link";
-import { IconParkTwotoneBigX } from "@/app/_component/burger/X";
+import { IconParkTwotoneBigX } from "@/app/_component/burger/support";
 import ModeToggle from "../mode/modeToggle";
 import styles from "./burger.module.css";
 
@@ -38,11 +38,7 @@ export default function Burger() {
             <Link href="/blog">Blog</Link>
           </li>
           <li className={styles.btn}>
-            <Link
-              href="https://x.com/Ushed_36"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <Link href="https://ushed.github.io/support">
               <IconParkTwotoneBigX />
             </Link>
           </li>
